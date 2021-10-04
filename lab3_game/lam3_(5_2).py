@@ -13,6 +13,9 @@ hight_color = (254, 214, 197)
 back_mountains_color = (252, 153, 45)
 front_mountains_color = (173, 65, 49)
 sun_color = (252, 239, 27)
+bird_color = (64, 27, 3)
+mountain_color = (44, 7, 33)
+width = 10
 
 
 pygame.draw.rect(screen, sky_color, (0, 0 * height, length, 0.25 * height))
@@ -58,7 +61,34 @@ pygame.draw.polygon(screen, front_mountains_color, [(0, 0.75 * height),
                                         (length, 0.45 * height),
                                         (length, 0.75 * height)])
 pygame.draw.rect(screen, front_color, (0, 0.75 * height, length, 0.25 * height))
+pygame.draw.polygon(screen, mountain_color, [(0, height),
+                                 (0, 0.55*height),
+                                 (0.12*length, 0.65*height),
+                                 (0.3*length, 0.94*height),
+                                 (0.4*length, 0.98*height),
+                                 (0.5*length, 0.92*height),
+                                 (0.65*length, 0.85*height),
+                                 (0.7*length, 0.9*height),
+                                 (0.86*length, 0.86*height),
+                                 (0.94*length, 0.66*height),
+                                 (length, 0.60*height),
+                                 (length, height)])
 
+def bird(x, y):
+    pygame.draw.arc(screen, bird_color, (x, y + 21, 55, 30), 0, 3, width)
+    pygame.draw.arc(screen, bird_color, (x, y + 20, 50, 30), 0, 3, width)
+    pygame.draw.arc(screen, bird_color, (x, y + 19, 50, 30), 0, 3, width)
+    pygame.draw.arc(screen, bird_color, (x + 40, y + 10, 40, 50), 1, 3, width)
+    pygame.draw.arc(screen, bird_color, (x + 40, y + 11, 40, 50), 1, 3, width)
+    pygame.draw.arc(screen, bird_color, (x + 40, y + 9, 40, 50), 1, 3, width)
+
+bird(0.6*length, 0.6*height)
+bird(0.7*length, 0.65*height)
+bird(0.76*length, 0.62*height)
+bird(0.58*length, 0.7*height)
+bird(0.5*length, 0.4*height)
+bird(0.56*length, 0.3*height)
+bird(0.66*length, 0.35*height)
 
 pygame.display.update()
 clock = pygame.time.Clock()
